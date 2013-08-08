@@ -1,0 +1,36 @@
+package com.quick.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.quick.entity.Expert;
+import com.quick.service.ExpertInfoEditService;
+
+
+public class ExpertInfoEditAction extends ActionSupport{
+
+	Expert expert;
+	ExpertInfoEditService expertInfoEditService;
+	
+	public String expertInfoEdit(){
+		System.out.println("--------------------"+expert.getFirstname());
+		expertInfoEditService.expertInfoEdit(expert);
+		return "success";
+	}
+
+	public Expert getExpert() {
+		return expert;
+	}
+
+	public void setExpert(Expert expert) {
+		this.expert = expert;
+	}
+
+	public ExpertInfoEditService getExpertInfoEditService() {
+		return expertInfoEditService;
+	}
+
+	public void setExpertInfoEditService(ExpertInfoEditService expertInfoEditService) {
+		this.expertInfoEditService = expertInfoEditService;
+	}
+
+
+}

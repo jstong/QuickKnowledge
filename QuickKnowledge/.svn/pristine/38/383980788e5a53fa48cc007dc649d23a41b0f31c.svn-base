@@ -1,0 +1,36 @@
+package com.quick.dao.impl;
+
+import java.math.BigDecimal;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.quick.dao.ExpertInfoEditDao;
+import com.quick.entity.Expert;
+import com.quick.entity.User;
+
+
+public class ExpertInfoDaopImpl extends HibernateDaoSupport implements ExpertInfoEditDao{
+
+	public Expert expertInfoEdit(Expert expert) {
+		//保存用户修改的信息
+		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
+		Criteria criteria = session.createCriteria(Expert.class);
+//		criteria.add(Restrictions.eq("username", username));
+//		criteria.add(Restrictions.eq("password", password));
+		BigDecimal userid  =new BigDecimal(2);
+		User user = (User) this.getHibernateTemplate().get(Expert.class,userid);
+		System.out.println("user--------------------"+user);
+		expert.setUser(user);
+		System.out.println("11111111111111111"+user.getUserid());
+		/*session.update("update expert set firstname = "+expert.getFirstname()
+				+",lastname ="+expert.getLastname()+",phone="+expert.getPhone()+",adress="+expert.getCity()+
+				",province="+expert.getProince()+",postcode="+
+				expert.getPostcode()+",experttype="+expert.getEvents()
+				+"where expertID="+1);*/
+		 this.getHibernateTemplate().update(expert);
+		 return expert;
+	}
+
+}

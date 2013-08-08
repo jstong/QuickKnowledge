@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="default" extends="struts-default" >
+
+        <!--企业注册 -->
+	 	<action name="EnterpriseRegister" class="EnterpriseRegisterAction" method="register">
+	 		<result name="input">/Register/EnterpriseRegister.jsp</result>
+	 	</action>
+	 	<!--专家注册 -->
+	 	<action name="ExpertRegister" class="ExpertRegisterAction" method="register">
+	 		<result name="input">/Register/EnterpriseRegister.jsp</result>
+	 	</action>
+
+	 	<!--添加新闻 -->
+	 	<action name="addNews" class="AddNewsAction" >
+	 		<result name="input">/Register/EnterpriseRegister.jsp</result>
+	 		<result name="queryNews">/News/NewsQuery.jsp</result>
+	 		<result name="newsDetails">/News/NewsDetails.jsp</result>
+	 	</action>
+	 	
+	 	<!--添加事件 -->
+	 	<action name="addEvent" class="AddEventAction" method="AddEvent">
+	 		<result name="input">/Register/EnterpriseRegister.jsp</result>
+	 	</action>
+	
+	 	<!--专家修改个人信息 -->
+	 	<action name="expertInfoEditAction" class="expertInfoEditAction" method="expertInfoEdit">
+	 		<result name="input">/EditInfo/ExpertInformationEdit.jsp</result>
+	 	</action>
+	 </package>
+</struts>

@@ -1,0 +1,32 @@
+package com.quick.action;
+
+
+import com.quick.entity.News;
+
+import com.quick.service.NewsService;
+
+
+public class NewsAction {
+	News news=new News();
+	NewsService newsService;
+	public String AddNews() {
+        boolean ret = newsService.addNews(news);
+		if (ret) {
+			
+			return "registerSucc";
+		}
+			return "registerError";
+	}
+	public News getNews() {
+		return news;
+	}
+	public void setNews(News news) {
+		this.news = news;
+	}
+	public NewsService getNewsService() {
+		return newsService;
+	}
+	public void setNewsService(NewsService newsService) {
+		this.newsService = newsService;
+	}
+}

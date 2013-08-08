@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="ENTERPRISE" schema="TEAM" class="Enterprise"></table>
+	<table name="User" schema="TEAM" class="User"></table>
+	<table name="BIDS" schema="TEAM" class="Bids"></table>
+	<table name="EXPERT" schema="TEAM" class="Expert"></table>
+	<table name="BIDRESPONSES" schema="TEAM" class="BidResponses"></table>
+	<table name="COMMONSITEENTERPR" schema="TEAM"
+		class="CommonSiteEnterpr">
+	</table>
+	<table name="COMMONSITEEXPERT" schema="TEAM"
+		class="CommonSiteExpert">
+	</table>
+	<table name="ENTERPRISEFORUM" schema="TEAM"
+		class="EnterpriseForum">
+	</table>
+	<table name="EVENT" schema="TEAM" class="Event"></table>
+	<table name="EXPERTBUILTTEAM" schema="TEAM"
+		class="ExpertBuiltTeam">
+	</table>
+	<table name="EXPERTRESPONSEBID" schema="TEAM"
+		class="ExpertResponseBid">
+	</table>
+	<table name="NEWS" schema="TEAM" class="News"></table>
+	<table name="PUBLICATIONS" schema="TEAM" class="Publications"></table>
+	<table name="RFPRESPONSE" schema="TEAM" class="RfpResponse"></table>
+	<table name="RFPS" schema="TEAM" class="Rfps"></table>
+	<table name="VIRTUALTEAM" schema="TEAM" class="VirtualTeam"></table>
+	<table name="COMMONSITE" schema="TEAM" class="CommonSite"></table>
+	<table name="USERS" schema="TEAM" class="Users"></table>
+</hibernate-reverse-engineering>

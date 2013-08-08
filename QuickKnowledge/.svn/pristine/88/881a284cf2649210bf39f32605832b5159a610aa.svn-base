@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+	<!-- 企业注册 -->
+	<bean name="registerDao" class="com.quick.dao.impl.EnterpriseRegisterDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="registerService" class="com.quick.service.impl.EnterpriseRegisterServiceImpl">
+		<property name="registerDao" ref="registerDao"></property>
+	</bean>
+	
+	<bean name="EnterpriseRegisterAction" class="com.quick.action.EnterpriseRegisterAction" scope="prototype">
+		<property name="registerService" ref="registerService"></property>
+	</bean>
+		<!-- 专家注册 -->
+	<bean name="expertregisterDao" class="com.quick.dao.impl.ExpertRegisterDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="expertregisterService" class="com.quick.service.impl.ExpertRegisterServiceImpl">
+		<property name="expertregisterDao" ref="expertregisterDao"></property>
+	</bean>
+	
+	<bean name="ExpertRegisterAction" class="com.quick.action.ExpertRegisterAction" scope="prototype">
+		<property name="expertregisterService" ref="expertregisterService"></property>
+		</bean>
+		<!-- 添加新闻 -->
+	<bean name="newsDao" class="com.quick.dao.impl.NewsDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	
+	<bean name="newsService" class="com.quick.service.impl.NewsServiceImpl">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<bean name="AddNewsAction" class="com.quick.action.NewsAction" scope="prototype">
+		<property name="newsService" ref="newsService"></property>
+	</bean>
+	
+		<!-- 添加事件 -->
+	<bean name="eventDao" class="com.quick.dao.impl.EventDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="eventService" class="com.quick.service.impl.EventServiceImpl">
+		<property name="eventDao" ref="eventDao"></property>
+	</bean>
+	
+	<bean name="AddEventAction" class="com.quick.action.EventAction" scope="prototype">
+		<property name="eventService" ref="eventService"></property>
+	</bean>
+	
+	<!-- 专家修改个人信息 -->
+	<bean name="expertInfoEditDao" class="com.quick.dao.impl.ExpertInfoDaopImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean name="expertInfoEditService" class="com.quick.service.impl.ExpertInfoEditSerivceImpl">
+		<property name="expertInfoEditDao" ref="expertInfoEditDao"></property>
+	</bean>
+	<bean name="expertInfoEditAction" class="com.quick.action.ExpertInfoEditAction">
+		<property name="expertInfoEditService" ref="expertInfoEditService"></property>
+	</bean>
+</beans>

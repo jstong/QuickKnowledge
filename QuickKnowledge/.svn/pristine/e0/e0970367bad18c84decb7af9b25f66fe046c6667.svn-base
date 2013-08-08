@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="sessionFactory">
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.formate_sql">true</property>
+		<property name="dialect">
+			org.hibernate.dialect.Oracle9Dialect
+		</property>
+		<property name="connection.username">team</property>
+		<property name="connection.password">team</property>
+		<property name="myeclipse.connection.profile">oracle</property>
+		<property name="connection.url">
+			jdbc:oracle:thin:@127.0.0.1:1521:orcl
+		</property>
+		<property name="connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<mapping resource="./User.hbm.xml" />
+		<mapping resource="./Enterprise.hbm.xml" />
+		<mapping resource="./Expert.hbm.xml" />
+		<mapping resource="./Bids.hbm.xml" />
+		<mapping resource="./CommonSiteExpert.hbm.xml" />
+		<mapping resource="./ExpertBuiltTeam.hbm.xml" />
+		<mapping resource="./Event.hbm.xml" />
+		<mapping resource="./RfpResponse.hbm.xml" />
+		<mapping resource="./Rfps.hbm.xml" />
+		<mapping resource="./Publications.hbm.xml" />
+		<mapping resource="./News.hbm.xml" />
+		<mapping resource="./CommonSiteEnterpr.hbm.xml" />
+		<mapping resource="./BidResponses.hbm.xml" />
+		<mapping resource="./VirtualTeam.hbm.xml" />
+		<mapping resource="./ExpertResponseBid.hbm.xml" />
+		<mapping resource="./EnterpriseForum.hbm.xml" />
+		<mapping resource="./Users.hbm.xml" />
+		<mapping resource="./CommonSite.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
